@@ -49,8 +49,9 @@
 
                         <tr>
                             <th>Hospital</th>
-                            <td>{{ $beneficiary_data->hosp_name }} ({{ $beneficiary_data->hosp_disp_code }})</td>
-
+                            <td colspan="3">{{ $beneficiary_data->hosp_name }} ({{ $beneficiary_data->hosp_disp_code }})</td>
+           </tr>
+           <tr>
                             <th>Hospital District</th>
                             <td>{{ $beneficiary_data->hospdist }}</td>
                         </tr>
@@ -97,7 +98,7 @@
 
                         <tr>
                             <th>Procedure Name</th>
-                            <td>{{ $beneficiary_data->procedure_name }}</td>
+                            <td colspan="3">{{ $beneficiary_data->procedure_name }}</td>
                         </tr>
                    </table>
                </div>
@@ -106,4 +107,10 @@
    </div>
 </section>
 
+@stop
+@section('pageCss')
+<style>
+   table {border-collapse:collapse; table-layout:fixed;}
+   table td {border:solid 1px #fab; width:250px; word-wrap:break-word;}
+   </style>
 @stop

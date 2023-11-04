@@ -88,7 +88,7 @@
                                 <div class="col-sm-4">
                                     <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" required="required" type="radio" value="YES" name="satsfied">
+                                        <input type="radio" required="required" type="radio" value="Yes" name="satsfied">
                                         YES
                                     </label>
                                     </div>
@@ -96,7 +96,7 @@
                                 <div class="col-sm-5">
                                     <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" required="required" type="radio" value="NO" name="satsfied">
+                                        <input type="radio" required="required" type="radio" value="No" name="satsfied">
                                         NO
                                     </label>
                                     </div>
@@ -113,17 +113,6 @@
                        </div>
                        <div class="row">
                            <div class="col-sm-6">
-                               <!-- <div class="form-group">
-                                   <label>Whether the treatment was cashless ?*</label>
-                                   <div class="form-check">
-                                       <input class="form-check-input" required="required" type="radio" value="YES" name="cashless">
-                                       <label class="form-check-label">YES</label>
-                                   </div>
-                                   <div class="form-check">
-                                       <input class="form-check-input" required="required" type="radio" value="NO" name="cashless">
-                                       <label class="form-check-label">NO</label>
-                                   </div>
-                               </div> -->
 
 
                                <div class="col-md-6">
@@ -132,7 +121,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" required="required" type="radio" value="YES" name="cashless">
+                                            <input class="form-check-input" type="radio" required="required" type="radio" value="Yes" name="cashless">
                                             YES
                                         </label>
                                         </div>
@@ -140,7 +129,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-check">
                                         <label class="form-check-label">
-                                            <input class="form-check-input" type="radio" required="required" type="radio" value="NO" name="cashless">
+                                            <input class="form-check-input" type="radio" required="required" type="radio" value="No" name="cashless">
                                             NO
                                         </label>
                                         </div>
@@ -209,7 +198,7 @@
 @section('pageJs')
 <script>
 
-$(document).ready(function() {
+    $(document).ready(function() {
         getLocation();
     });
 

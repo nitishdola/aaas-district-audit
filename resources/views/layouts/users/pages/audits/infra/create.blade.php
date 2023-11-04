@@ -56,7 +56,7 @@
 
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label>Existence of Hospital</label><br>
+                            <label>Address Verification</label><br>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
                                     <input class="form-check-input" 
@@ -64,7 +64,7 @@
                                             name="existence_of_hospital" 
                                             id="exyes" 
                                     value=1>
-                                        YES
+                                        Found to be correct
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
@@ -74,8 +74,15 @@
                                             name="existence_of_hospital" 
                                             id="exno" 
                                             value=0>
-                                No</label>
+                                Address Incorrect</label>
                             </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>If No, Remarks</label><br>
+                            {!! Form::textarea('infrastructure_remarks', null, ['class' => 'form-control', 'id' => 'infrastructure_remarks', 'rows' => 3, 'autocomplete' => 'off']) !!}
                         </div>
                     </div>
                 </div>

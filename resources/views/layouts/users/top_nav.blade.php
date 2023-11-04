@@ -17,7 +17,7 @@
         <i class="fa fa-user-circle" aria-hidden="true"></i>
         </a>
         <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-            <a class="dropdown-item">
+            <a class="dropdown-item" href="{{ route('change_password') }}">
             <i class="ti-settings text-primary"></i>
                 Change Password
             </a>

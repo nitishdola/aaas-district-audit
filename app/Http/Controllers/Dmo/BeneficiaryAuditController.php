@@ -148,15 +148,15 @@ class BeneficiaryAuditController extends Controller
             'longitude'                     => 'required',
             'address_of_the_beneficiary'    => 'required|min:10|max:255',
             'remarks'                       => 'required|min:10|max:255',
-            'satsfied'                      => 'required|in:YES,NO',
-            'cashless'                      => 'required|in:YES,NO',
+            'satsfied'                      => 'required|in:Yes,No',
+            'cashless'                      => 'required|in:Yes,No',
 
             'attachment_names.*'            => 'required|max:255',
             'attachments.*'                 => 'required|mimes:jpg,jpeg,png,bmp,pdf|max:2048',
 
             'beneficiary_photo'             => 'required|mimes:jpg,jpeg,png,bmp,pdf|max:2048',
 
-            'cash_memo'                     => 'required_if:cashless,==,NO|mimes:jpg,jpeg,png,bmp,pdf|max:2048',
+            'cash_memo'                     => 'required_if:cashless,==,No|mimes:jpg,jpeg,png,bmp,pdf|max:2048',
         ]);
 
         $data = [];
@@ -166,11 +166,14 @@ class BeneficiaryAuditController extends Controller
         $data['tms_data_record_id'] = $tms_data_record_id;
         $data['address_of_the_beneficiary'] = $request->address_of_the_beneficiary;
         $data['remarks'] = $request->remarks;
-        $data['satsfied'] = $request->satsfied;
-        $data['cashless'] = $request->cashless;
+        $data['beneficiary_satisfied_with_treatment'] = $request->satsfied;
+        $data['cashless_treatment'] = $request->cashless;
         $data['audit_type'] = 'home_visit';
         $data['user_id'] = auth()->user()->id;
         $data['date_of_audit'] = date('Y-m-d');
+
+        //dd($data);
+
         DB::beginTransaction();
 
         
@@ -216,7 +219,7 @@ class BeneficiaryAuditController extends Controller
                     $attachment_name = str_replace(' ', '_', $attachment_name);
 
                     $fileName  = md5(time()).$attachment_name.'_'.$fileName ;
-                    $filePath = $file->storeAs('uploads/benefciary_audit', $fileName, 'public');
+                    $filePath = $file->storeAs('uploads/beneficiary_audit', $fileName, 'public');
                     //$path = 'audit/infra/'.$infra_audit->id;
 
                     //Storage::disk('local')->put($path, $filename, 'public');
@@ -236,6 +239,8 @@ class BeneficiaryAuditController extends Controller
         $tms_data_record->save();
 
         DB::commit();
+
+        toastr()->success('Home visit audit submitted');
 
         return Redirect::route('dmo.home')->with(['message' => 'Home visit audit submitted.', 'alert-class' => 'alert-success']);
     }
@@ -335,6 +340,8 @@ class BeneficiaryAuditController extends Controller
         $tms_data_record->save();
 
         DB::commit();
+
+        toastr()->success('Telephonic audit submitted');
 
         return Redirect::route('audit.beneficiary.view_all_data')->with(['message' => 'Telephonic audit submitted.', 'alert-class' => 'alert-success']);
 

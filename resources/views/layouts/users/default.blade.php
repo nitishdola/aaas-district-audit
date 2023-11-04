@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="{{ asset('users/css/vertical-layout-light/style.css') }}">
   <link rel="shortcut icon" href="{{ asset('users/images/favicon.png') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Zebra_datepicker/1.9.19/css/bootstrap/zebra_datepicker.min.css" integrity="sha512-m/itLbtr4RKMErTLBb2BL6uQXIW1xBC3IXnlBe+/JTBktlOH5s5wpmsh0Z0D9zZs5wH1FKcNWF2za5njkkLEbQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   @yield('pageCss')
 </head>

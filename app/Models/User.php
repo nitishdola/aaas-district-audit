@@ -42,4 +42,19 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function homeVisit()
+    {
+        return $this->hasMany('App\Models\Audit\BeneficiaryAudit')->where('audit_type', 'home_visit')        ;
+    }
+
+    public function telephonicAudit()
+    {
+        return $this->hasMany('App\Models\Audit\BeneficiaryAudit')->where('audit_type', 'telephonic_audit')        ;
+    }
+
+    public function infrastructureAudit()
+    {
+        return $this->hasMany('App\Models\Audit\InfrastructureAudit');
+    }
 }

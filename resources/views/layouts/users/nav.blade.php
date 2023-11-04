@@ -14,7 +14,7 @@
         </a>
         <div class="collapse" id="ui-basic">
             <ul class="nav flex-column sub-menu">
-            <li class="nav-item"> <a class="nav-link" href="{{ route('audit.beneficiary.fetch_data') }}">Get Data</a></li>
+            <!--<li class="nav-item"> <a class="nav-link" href="{{ route('audit.beneficiary.fetch_data') }}">Get Data</a></li>-->
             <li class="nav-item"> <a class="nav-link" href="{{ route('audit.beneficiary.view_all_data') }}">View Data</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('audit.beneficiary.view_all_home_visits') }}">Home Visits</a></li>
             <li class="nav-item"> <a class="nav-link" href="{{ route('audit.beneficiary.view_all_telephonic_audits') }}">Tephonic Visits</a></li>
@@ -36,6 +36,13 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('audit.infrastructure.index') }}">View All</a></li>
                 </ul>
             </div>
+        </li>
+
+        <li class="nav-item">
+        <a class="nav-link" href="{{ route('daily_activity.create') }}">
+            <i class="fa-solid fa-right-to-bracket"></i>
+            <span class="menu-title"> Daily Update</span>
+        </a>
         </li>
         
     </ul>
